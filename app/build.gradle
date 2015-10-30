@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-1038"
+    compile 'com.android.support:recyclerview-v7:22.2.0'
 }
