@@ -2,14 +2,16 @@ package com.gmail.markdevw.tryingkotlin.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 
 import com.gmail.markdevw.tryingkotlin.R
+import com.gmail.markdevw.tryingkotlin.adapters.ItemAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(mToolbar)
 
         val mRecyclerView = findViewById(R.id.rv_activity_main) as RecyclerView
+        val mItemAdapter = ItemAdapter(this)
+
+        mRecyclerView.setLayoutManager(LinearLayoutManager(this));
+        mRecyclerView.setItemAnimator(DefaultItemAnimator());
+        mRecyclerView.setAdapter(mItemAdapter);
+        mRecyclerView.setHasFixedSize(true);
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
